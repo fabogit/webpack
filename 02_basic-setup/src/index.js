@@ -1,1 +1,3 @@
-myFunction()
+import helloWorld from './hello-world.js';
+
+helloWorld();
