@@ -62,11 +62,18 @@ module.exports = {
 			// 	cleanOnceBeforeBuildPatterns: [
 			// 		// all folders&subfolder from output.path
 			// 		'**/*',
-			// 		// costum path, es ./build
+			// 		// custom path, es ./build
 			// 		path.join(process.cwd(), 'build/**/*')
 			// 	]
 			// }
 		),
-		new HtmlWebpackPlugin()
+		new HtmlWebpackPlugin({
+			title: 'html title',
+			filename: 'index.html',
+			meta:
+			{
+				description: 'Some description'
+			}
+		})
 	]
 };
