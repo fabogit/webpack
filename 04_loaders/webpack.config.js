@@ -40,11 +40,21 @@ module.exports = {
 			// 		}
 			// 	}
 			// }
+
 			// will import css
 			{
 				test: /\.css$/,
+				// loading order rigt to left
 				use: [
 					'style-loader', 'css-loader'
+				]
+			},
+
+			// will import scss
+			{
+				test: /\.scss$/,
+				use: [
+					'style-loader', 'css-loader', 'sass-loader'
 				]
 			}
 		]
