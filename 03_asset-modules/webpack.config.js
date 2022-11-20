@@ -16,11 +16,19 @@ module.exports = {
 			// 	test: /\.(png)$/,
 			// 	type: 'asset/resource',
 			// },
+
 			// will insert asset into bundled code as base 64str
 			// {
 			// 	test: /\.(jpg)$/,
 			// 	type: 'asset/inline',
 			// },
+
+			// will inject source code into bundle
+			{
+				test: /\.(txt)$/,
+				type: 'asset/source',
+			},
+
 			// auto based on the file size
 			{
 				test: /\.(png|jpg)$/,
