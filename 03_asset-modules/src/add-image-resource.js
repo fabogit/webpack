@@ -1,6 +1,6 @@
-import myImage from "../public/images/wbpk.png";
+import myImage from "../public/images/image.png";
 
-function addImage() {
+export function addImageResource() {
 	const img = document.createElement('img');
 	img.alt = 'Image';
 	img.width = 300;
@@ -9,4 +9,4 @@ function addImage() {
 	body.appendChild(img);
 }
 
-export default addImage;
+export default addImageResource;

@@ -1,5 +1,7 @@
 import helloWorld from './hello-world.js';
-import addImage from "./add-image.js";
+import addImageResource from "./add-image-resource.js";
+import addImageInLine from "./add-image-inline.js";
 
 helloWorld();
-addImage();
+addImageResource();
+addImageInLine();
