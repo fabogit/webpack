@@ -1,4 +1,4 @@
-import myImage from "../public/images/image.jpg";
+import myImage from "../public/images/wbpk.png";
 
 function addImage() {
 	const img = document.createElement('img');
