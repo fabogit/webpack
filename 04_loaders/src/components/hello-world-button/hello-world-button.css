@@ -1,0 +1,12 @@
+.hello-btn {
+	font-size: 2rem;
+	padding: 0.5rem 1rem;
+	background: red;
+	color: black;
+	outline: none;
+}
+
+.hello-text {
+	color: blue;
+	font-weight: bold;
+}
