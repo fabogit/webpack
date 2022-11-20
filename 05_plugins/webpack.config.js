@@ -1,15 +1,22 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	mode: 'none',
 	entry: './src/index.js',
 	output: {
-		filename: 'bundle.js',
+		// md5 hash for caching
+		filename: 'bundle_[contenthash].js',
 		path: path.resolve(__dirname, './dist'),
 		// could be also an url es http://url.com/
-		publicPath: 'dist/'
+		publicPath: 'dist/',
+		// clear old builds
+		// clean: {
+		// 	dry: true,
+		// 	keep: /\.css/
+		// }
 	},
 	module: {
 		rules: [
@@ -47,7 +54,15 @@ module.exports = {
 	plugins: [
 		new TerserPlugin(),
 		new MiniCssExtractPlugin({
-			filename: 'styles.css',
-		})
+			filename: 'styles_[contenthash].css',
+		}),
+		new CleanWebpackPlugin({
+			cleanOnceBeforeBuildPatterns: [
+				// all folders&subfolder from output.path
+				'**/*',
+				// costum path, es ./build
+				path.join(process.cwd(), 'build/**/*')
+			]
+		}),
 	]
 };
