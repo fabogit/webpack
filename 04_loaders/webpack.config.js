@@ -56,6 +56,19 @@ module.exports = {
 				use: [
 					'style-loader', 'css-loader', 'sass-loader'
 				]
+			},
+
+			// will use babel to convert js v* to ES5
+			{
+				test: /\.js$/,
+				exclude: '/node/modules',
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/env'],
+						plugins: ['@babel/plugin-proposal-class-properties']
+					}
+				}
 			}
 		]
 	}
