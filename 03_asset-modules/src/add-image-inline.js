@@ -1,4 +1,4 @@
-import myImage from "../public/images/image.jpg";
+import myImage from "../public/images/image-small.png";
 
 export function addImageInLine() {
 	const img = document.createElement('img');

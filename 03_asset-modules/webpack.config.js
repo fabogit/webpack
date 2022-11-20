@@ -12,14 +12,25 @@ module.exports = {
 	module: {
 		rules: [
 			// will create a separate file
-			{
-				test: /\.(png)$/,
-				type: 'asset/resource',
-			},
+			// {
+			// 	test: /\.(png)$/,
+			// 	type: 'asset/resource',
+			// },
 			// will insert asset into bundled code as base 64str
+			// {
+			// 	test: /\.(jpg)$/,
+			// 	type: 'asset/inline',
+			// },
+			// auto based on the file size
 			{
-				test: /\.(jpg)$/,
-				type: 'asset/inline',
+				test: /\.(png|jpg)$/,
+				type: 'asset',
+				parser: {
+					dataUrlCondition: {
+						// max size for asset/inline 10kilobytes
+						maxSize: 10 * 1024
+					}
+				}
 			}
 		]
 	}

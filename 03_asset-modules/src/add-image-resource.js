@@ -1,4 +1,4 @@
-import myImage from "../public/images/image.png";
+import myImage from "../public/images/image-big.jpg";
 
 export function addImageResource() {
 	const img = document.createElement('img');
