@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx webpack --stats detailed"
-  },
+    "build": "npx webpack --stats detailed --config webpack.config.prod.js",
+	"build-dev": "npx webpack --stats detailed --config webpack.config.dev.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
